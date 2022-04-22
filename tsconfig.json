@@ -1,0 +1,9 @@
+{
+	"compileOptions": {
+		"outDir": "./dist", // Local onde será gerado o javascript
+		"module": "commonjs", // O javascript será gerado usando require e module.exports 
+		"target": "es2019", // A versão que o javascript será gerado
+		"esModuleInterop": true, // Convertem módulos que usam require internamente, para serem importados usando import/export,
+		"allowJs": true // Arquivo .js será incluido na dist
+	}
+}
