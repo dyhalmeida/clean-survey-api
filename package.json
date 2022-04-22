@@ -1,0 +1,7 @@
+{
+  "name": "clean-survey-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Diego Almeida <dyhalmeida@gmail.com>",
+  "license": "MIT"
+}
