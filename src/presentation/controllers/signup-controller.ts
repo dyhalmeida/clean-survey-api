@@ -1,9 +1,10 @@
 import { MissingParamError } from '../errors/missing-param-error'
 import { badRequest } from '../helpers/http-helper'
+import { Controller } from '../protocols/controller'
 import { HttpRequest, HttpResponse } from '../protocols/http'
 
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
-export class SignUpController {
+export class SignUpController implements Controller {
   public handle (httpRequest: HttpRequest): HttpResponse {
     const requiredFields = [
       'name',
