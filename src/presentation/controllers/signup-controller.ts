@@ -13,7 +13,7 @@ export class SignUpController implements Controller {
         'name',
         'email',
         'password',
-        'confirm_password'
+        'confirmPassword'
       ]
       for (const field of requiredFields) {
         if (!httpRequest.body[field]) {
