@@ -1,0 +1,5 @@
+export * from '../../protocols/controller'
+export * from '../../protocols/http'
+export * from '../../protocols/email-validator'
+export * from '../../../domain/models/account'
+export * from '../../../domain/use-cases/add-account'
