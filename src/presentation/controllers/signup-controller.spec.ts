@@ -82,6 +82,21 @@ describe('SignUpController', () => {
     expect(httpResponse.body).toEqual(new MissingParamError('confirmPassword'))
   })
 
+  test('Shoud return status code 400 when confirmPassword is different from password', () => {
+    const { sut } = makeSignUpController()
+    const httpRequest = {
+      body: {
+        name: 'any_name',
+        email: 'any_email@mail.com',
+        password: 'any_password',
+        confirmPassword: 'invalid_confirm_password'
+      }
+    }
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse.statusCode).toBe(400)
+    expect(httpResponse.body).toEqual(new InvalidParamError('confirmPassword'))
+  })
+
   test('Should return code status 400, when the invalid email is provided', () => {
     const { sut, emailValidatorStub } = makeSignUpController()
     jest.spyOn(emailValidatorStub, 'isValid').mockReturnValueOnce(false)
