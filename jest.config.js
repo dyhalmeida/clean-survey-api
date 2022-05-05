@@ -5,5 +5,13 @@ module.exports = {
   testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest'
+  },
+  // https://github.com/kulshekhar/ts-jest/issues/1173
+  globals: {
+    'ts-jest': {
+      diagnostics: {
+        ignoreCodes: ['TS151001']
+      }
+    }
   }
 }
